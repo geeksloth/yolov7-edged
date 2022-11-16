@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>YOLOv4 edged</title>
+	<style>
+		pre {
+			white-space: pre-wrap;
+			word-break: break-all;
+			}
+	</style>
+</head>
+<body>
+	<form method="post" enctype="multipart/form-data">
+		<p><input type="file" id="file" name="file"><input type=submit value=Upload></p>
+		<img src="data:image/jpeg;base64,{{img_data}}" id="img-upload" alt="img_data" class="img-upload"/>
+		<pre id="json">{{json_data}}</pre>
+	</form>
+<script>
+	(function() {
+        var input = document.getElementById("json").value;
+		document.getElementById("json").textContent = JSON.stringify(JSON.parse(input),undefined,2);
+    })();
+</script>
+</body>
+</html> 
