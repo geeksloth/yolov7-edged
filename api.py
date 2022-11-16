@@ -180,11 +180,6 @@ def index():
 			frame = letterbox(frame)[0]
 			frame = frame[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
 			frame = np.ascontiguousarray(frame)
-			print(type(frame))
-			print(frame.dtype)
-			print(frame.size)
-			print(frame.ndim)
-			print(frame.shape)
 			frame = torch.from_numpy(frame).to(device)
 			frame = frame.half() if half else frame.float()  # uint8 to fp16/32
 			#frame = frame.float()
@@ -294,4 +289,4 @@ def index():
 
 if __name__ == "__main__":
 	app.debug=True
-	app.run(host='0.0.0.0', port=5003)
+	app.run(host='0.0.0.0', port=84)
